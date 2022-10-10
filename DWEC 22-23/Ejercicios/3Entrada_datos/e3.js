@@ -15,7 +15,7 @@ document.write('El area de radio ', radio, ' es ',area), "<br>";
 var edades = [prompt('Escribe una edad'), prompt('Escribe un edad'),prompt('Escribe un edad'),prompt('Escribe un edad') ];
 edades.sort();
 var suma;
-suma=edades[0]+edades[3]+(edades[1]*edades[2]);
+suma=parseInt(edades[0])+parseInt(edades[3])+(parseInt(edades[1])*parseInt(edades[2]));
 document.write("<br>", suma);
 
 //4
