@@ -3,6 +3,7 @@
 //El número de entradas en la tabla deberá ser siempre de 10 por lo que el intervalo se tendrá
 //que ajustar en función de los valores introducidos. Se mostrara en el navehador pot medio de document.write.
 
+
 var tipo;
 var numC;
 var numF;
@@ -16,36 +17,26 @@ function definirTemp(){
     return tipo;
 }
 
-function definirValorC(){
-        var numIni=prompt("Escribe los grados en Celsius");
-        var numFin=(numIni*1.8)+32;
-        var arrayC = [numIni, numFin];
-        return arrayC;
+function definirValorC(cantidad){
+    var numFin=(cantidad*1.8)+32;
+    return numFin;
 }
 
-function definirValorF(numIni,numFin){
-    var numIni=prompt("Escribe los grados en Farenheit");
-    var numFin=(numIni-32)*(5/9);
-    var retornoF
-
-    retornoF.numIni = numIni;
-    retornoF.numFin = numFin;
-    return retornoF;
+function definirValorF(cantidad){
+    var numFin=(cantidad-32)*(5/9);
+    return numFin;
 }
 
+for($i=0;$i<10;$i++){
 tipo=definirTemp();
-document.write(tipo,"<br>")
-
- if(tipo=="C"){
-        numF=definirValorC();
-        document.write("Temperatura en Celsius: ",numF[0],"<br>Temperatura en Celsius", numF[1]);
+    if(tipo=="C"){
+        numC=parseFloat(prompt("Escribe los grados en Celsius"));
+        numF=definirValorC(numC);
+        document.write(numC," ",numF, "</bR>");
     }
-
-else if (tipo=="F"){
-        for(var i=0; i<numC.lenght; i++){
-            numC=definirValorF();
-            numC.numIni
-            document.write("Temperatura en Farenheit: ",numC[i].numIni,"<br>Temperatura en Celsius", numC[i].numFin);
-        }
+    else if (tipo=="F"){
+        numF=parseFloat(prompt("Escribe los grados en Farenheit"));
+        numC=definirValorF(numF);
+        document.write(numF," ",numC, "</bR>");
     }
-
+ }

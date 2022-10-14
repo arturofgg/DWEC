@@ -2,4 +2,3 @@
 var array = [prompt("Escribe un numero"),prompt("Escribe un numero"),prompt("Escribe un numero")];
 array.reverse();
 document.write(array);
-
