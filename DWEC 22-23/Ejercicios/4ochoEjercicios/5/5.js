@@ -3,7 +3,6 @@
 //El número de entradas en la tabla deberá ser siempre de 10 por lo que el intervalo se tendrá
 //que ajustar en función de los valores introducidos. Se mostrara en el navehador pot medio de document.write.
 
-
 var tipo;
 var numC;
 var numF;
@@ -27,16 +26,33 @@ function definirValorF(cantidad){
     return numFin;
 }
 
+numC=[];
+numF=[];
+
 for($i=0;$i<10;$i++){
 tipo=definirTemp();
     if(tipo=="C"){
-        numC=parseFloat(prompt("Escribe los grados en Celsius"));
-        numF=definirValorC(numC);
-        document.write(numC," ",numF, "</bR>");
+        numC[i]=parseFloat(prompt("Escribe los grados en Celsius"));
+        numF[i]=definirValorC(numC[i]);
     }
     else if (tipo=="F"){
-        numF=parseFloat(prompt("Escribe los grados en Farenheit"));
-        numC=definirValorF(numF);
-        document.write(numF," ",numC, "</bR>");
+        numF[i]=parseFloat(prompt("Escribe los grados en Farenheit"));
+        numC[i]=definirValorF(numF[i]);
     }
  }
+
+function crearTabla(numC,numF){
+    var stringini="<tr><th>Celsius</th><th>Farenheit</th></tr>";
+    for($i=0;$i<10;$i++){
+    var fila="<tr><td>";
+    fila+=numC[i];
+    fila+="</td><td>";
+    fila+=numF[i];
+    fila+="</td></tr>";
+
+    stringini+=fila;
+   }
+   return stringini;
+}
+
+document.getElementById("tabla5").innerHTML=crearTabla(numC, numF);
