@@ -29,7 +29,7 @@ function definirValorF(cantidad){
 numC=[];
 numF=[];
 
-for($i=0;$i<10;$i++){
+for(let i=0;i<10;i++){
 tipo=definirTemp();
     if(tipo=="C"){
         numC[i]=parseFloat(prompt("Escribe los grados en Celsius"));
@@ -43,7 +43,7 @@ tipo=definirTemp();
 
 function crearTabla(numC,numF){
     var stringini="<tr><th>Celsius</th><th>Farenheit</th></tr>";
-    for($i=0;$i<10;$i++){
+    for(let i=0;i<10;i++){
     var fila="<tr><td>";
     fila+=numC[i];
     fila+="</td><td>";
