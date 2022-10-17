@@ -55,4 +55,4 @@ function crearTabla(numC,numF){
    return stringini;
 }
 
-document.getElementById("tabla5").innerHTML=crearTabla(numC, numF);
+document.getElementById("tabla5").innerHTML=crearTabla(numC, numF); g
