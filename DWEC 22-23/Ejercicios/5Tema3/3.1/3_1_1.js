@@ -1,36 +1,22 @@
-//Escribe una función que reciba dos números con dos decimales, que son la base y altura de un rectángulo, de
-//forma que devuelva su perímetro. Puedes elegir que la función obtenga los datos de la entrada estándar o no.
-//Indicándolo en el script.
+// 1.- Crea un programa que muestre la hora actual, en diferentes formatos, según el valor que teclee el usuario por parámetro. Ejemplo:
+/*a) 14:35:07 (hora detallada con
+minutos y segundos)
+b) 02:35 PM o AM
+*/
 
-let base=[];
-let altura=[];
-let perimetro=[];
+let fecha = new Date();
+let pregunta;
 
-function perimetroRectangulo(vbase,valtura){
-    var vperimetro = (vbase*2)+(valtura*2);
-    return vperimetro;
-}
+do{
+pregunta = prompt("Elige formato a/b");
 
-for(let i=0;i<2;i++){
-    base[i]=prompt("Escribe la base de un rectángulo");
-    altura[i]=prompt("Escribe la altura");
-    perimetro[i]=perimetroRectangulo(base[i], altura[i]);
-}
+    if (pregunta=="a"){
+        document.write(fecha.getHours() + ":" + fecha.getMinutes() + ":" + fecha.getSeconds());
 
-function crearTabla(base, altura, perimetro){
-    var stringf="<tr><th>Entrada</th><th>Salida</th></tr>";
-    for(let i=0;i<2;i++){
-        var fila="<tr><td>";
-        fila+=base[i];
-        fila+=",";
-        fila+=altura[i];
-        fila+="</td><td>";
-        fila+=perimetro[i];
-        fila+="</td></tr>";
-
-        stringf+=fila;
+    }else if (pregunta=="b"){
+        if(fecha.getHours()>11){
+            document.write(fecha.getHours() + ":" + fecha.getMinutes() + " PM");
+        }else document.write(fecha.getHours() + ":" + fecha.getMinutes() + " AM");
     }
-    return stringf;
-}
+}while(pregunta!="a" && pregunta!="b")
 
-document.getElementById("tabla").innerHTML=crearTabla(base, altura, perimetro);
