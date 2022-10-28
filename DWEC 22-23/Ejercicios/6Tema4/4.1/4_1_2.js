@@ -16,7 +16,7 @@ do{
                 ntAl[i]=parseFloat(prompt("Escribe la nota del alumno nº",i));
             }while(ntAl[i]<0 || ntAl[i]>10);
         }
-    }else document.write("Escribe un numero de alumnos inferior a 20 y superior a 8<br>");
+    }//else document.write("Escribe un numero de alumnos inferior a 20 y superior a 8<br>");
 }while(numAl>20 || numAl<8);
 
 for(let i=0;i<numAl;i++){
