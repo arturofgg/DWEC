@@ -2,7 +2,7 @@ let ventana;
 
 function abrirVentana(){
     if (confirm("Abre una ventana") == true) {
-        ventana = window.open("https://www.w3schools.com/js/default.asp" ,"mover" ,"width=300px, height=200px");
+        ventana = window.open("https://github.com/" ,"move" ,"width=300px, height=200px");
         ventana.moveBy(500,500);
         ventana.moveTo(100,200);
     }
