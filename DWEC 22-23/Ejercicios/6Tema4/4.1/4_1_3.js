@@ -1,28 +1,20 @@
-//Realiza una función que reciba como argumento un array con dos elementos de tipo cadena y 
-//devuelva true su en el primer elemento de la matriz se encuentran todas las letras del segundo
-//elemento de la matriz. Por ejemplo['javascript','JavaScript'] debe devolever true; 
-//['java','JavaScript'], false; ['JavaScript','java'],true;
+let a1=["javascript", "java"];
+let a2=["java","javascript"];
 
-ArrStrings=["javascript","javascript"];
+function comparador(arr) {
+    p1=arr[0];
+    p2=arr[1];
+    acomulador=0;
 
-function letraB(varr){
-    let arr=[]
-    let arr2=[]
-    let num=0;
-    let bool;
-
-    arr = varr[num].split("");
-    num++;
-    arr2 = varr[num].split("");
-
-    for(let i=0;i<arr2.length && i<arr.lenght; i++){
-        if (arr[i]==arr2[i]){
-            bool==true;
-        }else{
-            bool==false;
-            i=100;
-        } 
+    for (let i = 0; i < p2.length; i++) {
+        if(p1.includes(p2.substring(i,i+1))){
+            acomulador++;
+        }
     }
-    return bool;
+    if (acomulador==p1.length){
+        return document.write("Todas la letras encontradas <br>");
+    }else return document.write("Letras no encontradas <br>");
+
 }
-document.write(letraB(ArrStrings));
+comparador(a1);
+comparador(a2);
