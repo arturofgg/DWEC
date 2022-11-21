@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Mascotas{
+            nb;
+            comida;
+
+            constructor (nb,comida){
+                this.nb = nb;
+                this.comida = comida;
+            }
+
+            Datos(){
+                document.write(this.nb + " come " + this.comida + " gramos <br>");
+            }
+        }
+
+        class MascotasComida extends Mascotas{
+
+            constructor(nb,comida){
+                super(nb,comida);
+            }
+
+            bolsasDias(bolsa = 3){
+                let operacionDias = Math.round(parseFloat((bolsa*1000)/this.comida)*100)/100;
+                document.write("La comida de " + this.nb + " va a durar " + operacionDias + " dias <bR><bR>");
+            }
+
+        }
+
+        const conejo = new MascotasComida("Bigotes",250);
+        conejo.Datos();
+        conejo.bolsasDias();
+
+        const perro = new MascotasComida("Paquete",850);
+        perro.Datos();
+        perro.bolsasDias(5);
+
+        const capibara = new MascotasComida("Pucho",750);
+        capibara.Datos();
+        capibara.bolsasDias(2);
+
+    </script>
+</body>
+</html>
