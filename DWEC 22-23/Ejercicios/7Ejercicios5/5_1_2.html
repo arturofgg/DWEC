@@ -11,16 +11,24 @@ posicion(coordenadas) del raton, en pantalla, de las dos formas posibles.
     <title>Document</title>
 </head>
 <body>
+        <h2>Posicion del raton</h2>
+        X:<span id="x"></span></br>
+        Y:<span id="y"></span></br></br>
+
+        <h2>Posicion del raton en la pantalla</h2>
+        X:<span id="x2"></span></br>
+        Y:<span id="y2"></span></br></br>
+
     <script>
-        function posicionPagina(event){
-            let x = event.clientX;
-            let y = event.clientY;
-        }
-        function posicionPagina(event){
-            let x = event.clientX;
-            let y = event.clientY;
-        }
+
+    window.addEventListener('mousemove', function (a){
+        let x = event.screenX;
+        let y = event.screenY;
+        document.getElementById("x").textContent = a.clientX;
+        document.getElementById("y").textContent = a.clientY;
+        document.getElementById("x2").textContent = x;
+        document.getElementById("y2").textContent = y;
+    }); 
     </script>
-    <div id="divId"
 </body>
 </html>
