@@ -9,6 +9,16 @@ posicion(coordenadas) del raton, en pantalla, de las dos formas posibles.
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        window.addEventListener('mousemove', function (a){
+            let x = event.screenX;
+            let y = event.screenY;
+            document.getElementById("x").textContent = a.clientX;
+            document.getElementById("y").textContent = a.clientY;
+            document.getElementById("x2").textContent = x;
+            document.getElementById("y2").textContent = y;
+        }); 
+    </script>
 </head>
 <body>
         <h2>Posicion del raton</h2>
@@ -18,17 +28,5 @@ posicion(coordenadas) del raton, en pantalla, de las dos formas posibles.
         <h2>Posicion del raton en la pantalla</h2>
         X:<span id="x2"></span></br>
         Y:<span id="y2"></span></br></br>
-
-    <script>
-
-    window.addEventListener('mousemove', function (a){
-        let x = event.screenX;
-        let y = event.screenY;
-        document.getElementById("x").textContent = a.clientX;
-        document.getElementById("y").textContent = a.clientY;
-        document.getElementById("x2").textContent = x;
-        document.getElementById("y2").textContent = y;
-    }); 
-    </script>
 </body>
 </html>
