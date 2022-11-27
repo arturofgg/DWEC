@@ -1,0 +1,77 @@
+<!--1.-Construir un formulario, que incluya al menos 3 de los tipos de elementos definidos en la siguiente lista, siendo de
+contendio libre, pero que tengan una relación entre ellos. -->
+
+<!-- 2.- Modificar el programa de forma que permita acceder a los elementos del formulario definidos para mostrar el
+contenido elegido o tecleado.-->
+
+<!-- 3.- Añadir al formulario la siguiente eleccion:
+De forma, que se cambie el color de fondo del formulario, según el icono elegido.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        #caja { border: 1px solid black; }
+    </style>
+
+    <script type="text/javascript">
+        function escribe() {
+            escribir = document.getElementById("box")
+            value1 = "<h3>TEXTO: " + document.formujs.texto.value + "</h3>"
+            value2 = "<h3>RADIO: " + document.formujs.radio.value + "</h3>"
+            value3 = "<h3>TEXTAREA: " + document.formujs.textarea.value + "</h3>"
+            escribir.innerHTML = value1 + value2 +value3
+            }
+        window.onload = function() {
+            document.formujs.submit.onclick = escribe
+        }
+
+        function color(color1) {
+            var color2 = document.formujs.style.backgroundColor; 
+
+            if (color1=="r") {
+                color2 ="red";
+            }
+            else if (color1=="a") {
+                color2="blue";
+            }
+            else if (color1=="v") {
+                color2="green";
+            }
+            document.formujs.style.backgroundColor = color2;
+        }
+    </script>
+
+</head>
+<body>
+
+    <form name="formujs">
+
+        <p>Escribe un texto: <input type="text" id="texto" name="texto" placeholder="texto"></p>
+        
+        <div>
+            Radio: <br>
+            <input type="radio" id="radio1" name="radio" value="rojo" onclick="color('r')">
+            <label for="radio1">rojo</label><br>
+            <input type="radio" id="radio2" name="radio" value="azul" onclick="color('a')">
+            <label for="radio2">azul</label><br>
+            <input type="radio" id="radio3" name="radio" value="verde" onclick="color('v')">
+            <label for="radio3">verde</label><br><br>
+        </div>
+
+        <p>Escribe un area de texto:<br><textarea id="textarea" name="textarea" rows="5"></textarea></p><br>
+    
+        <p>Boton: <input type="button" id="submit" name="submit" value="Enviar"></p>
+    
+    </form><br>
+    <div id="box"></div>
+
+</body>
+</html>
+
+
