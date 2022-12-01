@@ -43,6 +43,24 @@ De forma, que se cambie el color de fondo del formulario, según el icono elegid
             else if (color1=="v") {
                 color2="green";
             }
+            else if (color1=="na") {
+                color2="orange";
+            }
+            else if (color1=="am") {
+                color2="yellow";
+            }
+            else if (color1=="mo") {
+                color2="purple";
+            }
+            else if (color1=="rosa") {
+                color2="pink";
+            }
+            else if (color1=="gris") {
+                color2="grey";
+            }
+            else if (color1=="blanco") {
+                color2="white";
+            }
             document.formujs.style.backgroundColor = color2;
         }
     </script>
@@ -61,7 +79,19 @@ De forma, que se cambie el color de fondo del formulario, según el icono elegid
             <input type="radio" id="radio2" name="radio" value="azul" onclick="color('a')">
             <label for="radio2">azul</label><br>
             <input type="radio" id="radio3" name="radio" value="verde" onclick="color('v')">
-            <label for="radio3">verde</label><br><br>
+            <label for="radio3">verde</label><br>
+            <input type="radio" id="radio4" name="radio" value="naranja" onclick="color('na')">
+            <label for="radio4">naranja</label><br>
+            <input type="radio" id="radio5" name="radio" value="amarillo" onclick="color('am')">
+            <label for="radio5">amarillo</label><br>
+            <input type="radio" id="radio6" name="radio" value="morado" onclick="color('mo')">
+            <label for="radio6">morado</label><br>
+            <input type="radio" id="radio7" name="radio" value="rosa" onclick="color('rosa')">
+            <label for="radio7">rosa</label><br>
+            <input type="radio" id="radio8" name="radio" value="gris" onclick="color('gris')">
+            <label for="radio8">gris</label><br>
+            <input type="radio" id="radio9" name="radio" value="blanco" onclick="color('blanco')">
+            <label for="radio9">blanco</label><br><br>
         </div>
 
         <p>Escribe un area de texto:<br><textarea id="textarea" name="textarea" rows="5"></textarea></p><br>
