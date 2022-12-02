@@ -1,0 +1,27 @@
+<!-- Realizar una web que permita mover una caja dentro de la ventana del navegador (como la figura) tanto
+con el mouse como con las teclas de desplazamiento del teclado. (2 ptos)-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3</title>
+    <style>
+        div{
+            width:100px;
+            height:150px ;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="iddiv" ></div>
+    <script>
+        //HAY QUE MOVERLO CON ONDRAGGEND
+       document.getElementByid("iddiv").draggable=true;
+    </script>
+    
+</body>
+</html>

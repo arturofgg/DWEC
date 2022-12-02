@@ -1,0 +1,67 @@
+<!--Declarar una clase llamada Jugador, donde se puedan grabar de cada uno, su nombre, edad, puntuación.
+Crear las propiedades para mostrar los atributos definidos. Validar que no se pueden teclear valores negativos en
+la edad. La clase debe desarrollarse con getter y setter. (1 pto.)-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+class Jugador{
+            nombre;
+            edad;
+            puntuacion;
+
+            constructor (nombre,edad,puntuacion){
+                this.nombre = nombre;
+                if(edad>0){
+                    this.edad = edad
+                }else this.edad = null;
+                this.puntuacion = puntuacion;
+            }
+
+            get nombre() {
+                return this.nombre ;
+            }
+
+            set nombre(nombre) {
+                this.nombre = nombre;
+            }
+
+            get edad() {
+                return this.edad ;
+            }
+
+            set edad(edad) {
+                this.edad = edad;
+            }
+
+            get puntuacion() {
+                return this.puntuacion ;
+            }
+
+            set puntuacion(puntuacion) {
+                this.puntuacion = puntuacion;
+            }
+            
+            Datos(){
+                document.write("Nombre: "+ this.nombre + "<br>Edad: " + this.edad + "<br>Puntuacion: " + this.puntuacion + " <br><br>");
+            }
+        }
+
+        
+
+        const persona = new Jugador("PACO", 12, 12);
+        const persona2 = new Jugador("JESUS", -12, 122);
+        persona.Datos();
+        persona2.Datos();
+
+    </script>
+</body>
+</html>

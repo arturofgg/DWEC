@@ -1,0 +1,67 @@
+<!-- 2.- Desarrollar un script que permita ingresar un array de 10 elementos numéricos, e informe del:
+- Valor acumulado de todos los elementos del array.
+- Valor acumulado de los elementos del array que sean menores de 600.
+- Numero de valores cuyo valor es superior a 2000. (1 pto) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio2</title>
+    <script>
+
+        function crearArray(){
+            let array = [];
+            for(let i=0; i<=10; i++){
+                array[i]= parseInt(prompt("ESCRIBE UN NUMERO"));
+            }
+            return array;
+        }
+
+        function sumarArray(array){
+            let total = 0;
+            for(let i=0; i<=10; i++){
+                total= total+array[i];
+            }
+            return total;
+        }
+
+        function sumar600(array){
+            let total = 0;
+            let max = 600;
+            for(let i=0; i<=10; i++){
+                if(parseInt(array[i])<max){
+                    total= total+array[i];
+                }
+            }
+            return total;
+        }
+
+        function contarValores(array){
+            let cont = 0;
+            let max = 2000;
+            for(let i=0; i<=10; i++){
+                if(parseInt(array[i])>max){
+                    cont++
+                }
+            }
+            return cont;
+        }
+
+        let array1 = crearArray();
+        let total = sumarArray(array1);
+        document.write("La suma de los elementos es " + total + "<br>");
+        let total2 = sumar600(array1);
+        document.write("La suma de los elementos menores de 600 es " + total2 + "<br>");
+        let total3 = contarValores(array1);
+        document.write("Hay " + total3 + " numeros mayores a 2000<br>");
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+
