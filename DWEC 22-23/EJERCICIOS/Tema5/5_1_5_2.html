@@ -8,16 +8,68 @@ encontrará y que informará al final del formulario.
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5_1_5_2</title>
-</head>
-<script>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>5_1_5_2</title>
+    </head>
+    <body>
+        <form action="" method="get" id="form" class="">
+            <label>Nombre del disco: </label><input type="text" name="nbd" id="nbd" size="30" maxlength="25" required><br><br>
 
-</script>
-<body>
-    
-</body>
+            <label>Nombre del autor o grupo: </label><input type="text" name="nbaog" id="nbaog" size="30" maxlength="25" required><br><br>
+
+            <label>Tipo de musica: </label><br>
+            <input type="radio" name="tipom" id="tipom1" checked><label>Rock </label><br>
+            <input type="radio" name="tipom" id="tipom2"><label>Pop </label><br>
+            <input type="radio" name="tipom" id="tipom3"><label>Indie </label><br><br><br>
+
+            <label>Comentarios</label><br>
+            <textarea name="comentarios" id="coment" placeholder="---Comentario sobre el album---" rows="9" cols="55" maxlength="300"></textarea><br><br>
+
+            <input type="submit" name="enviar" id="enviar" value="Enviar">
+            <input type="reset" name="reset" id="reset" value="Limpiar datos">
+        </form><br>
+
+        <script>
+            document.cookie="contador=0";
+            let contador = parseInt(getCookie(0));
+
+            function getCookie(cname){
+                var name = cname + "=";
+                var ca = document.cookie.split(";");
+                for(var i=0; i<ca.length; i++){
+                    var c =ca[i];
+                    while (c.charAt(0)=='') c = c.substring(1);
+                        if(c.indexOf(name) == 0)
+                            return c.substring(name.length,c.length);
+                }
+                return "";
+            }
+
+            var v = document.getElementById("enviar");
+            v.addEventListener("click",function(contador){
+                contador++;
+                console.log(contador);
+            })
+
+
+            //EXPRESION REGULAR SIN MAYUSCULAS NI GUIONES (NO HE SABDIO ENCONTRARLA)
+            const EXP_REG_NBA= /^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/;
+            let n = document.getElementById("nbaog");
+
+            n.addEventListener("keyup", function validarNba() {
+                n = document.getElementById("nbaog");
+                if(EXP_REG_NBA.test(n.value)) {
+                    n.style.color = "green";
+                } else if (n.value === '') {
+                    n.style.color = "";
+                } else {
+                    n.style.color = "red";
+                }
+            });
+            //NO HE CONSEGUIDO QUE SE MUESTREN LOS VALUES CON EL ALERT
+        </script>
+    </body>
 </html>
