@@ -1,0 +1,36 @@
+<!--Permitir cambiar los estilos del título de la página. Crear 2 botones para las acciones a implementar:
+• Cambiar color
+• Cambiar tamaño fuente-->
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="texto">Este es un titulo dinamico</h1><br>
+    <button name="color" id="color">CAMBIAR COLOR</button>
+    <button name="fuente" id="fuente">CAMBIAR FUENTE</button>
+
+    <script>
+        let color = document.getElementById("color");
+        let texto = document.getElementById("texto");
+        let fuente = document.getElementById("fuente");
+
+        function fcolor(num){
+            return Math.round(Math.random()*num);
+        }
+        //CAMBIO DE COLOR
+        color.addEventListener("click", function(){
+            texto.style.color = "rgb("+ fcolor(255)+","+ fcolor(255)+","+ fcolor(255)+")";
+        });
+        //CAMBIO DE FUENTE
+        fuente.addEventListener("click", function(){
+            texto.style.fontSize = fcolor(600)+"px";
+        });
+    </script>
+</body>
+</html>
