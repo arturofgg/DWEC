@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM2</title>
+</head>
+
+<body>
+    <input type="number" id="numero">
+    <button id="boton">CREAR UN CHECKBOX</button>
+    <ul id="all"></ul>
+
+    <script>
+        var num = document.getElementById("numero").value;
+        var aH = document.querySelector('#all');
+
+        function agregarTarea() {
+            var li = document.createElement("li");
+            li.innerHTML = "<input type='checkbox'>";
+            aH.appendChild(li);
+
+        }
+
+        var agregarCheck = document.getElementById("boton");
+        agregarCheck.addEventListener("click", function (evento) {
+            var aV = document.getElementById("numero").value;
+            for (i = 0; i < aV; i++) {
+
+                agregarTarea();
+            }
+        });
+    </script>
+</body>
+
+</html>
