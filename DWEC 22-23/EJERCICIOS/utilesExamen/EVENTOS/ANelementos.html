@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        window.addEventListener("load", inicio);
+        function inicio(){
+        for(var i=0; i<document.getElementNyTagName("h2").length;i++){
+            document.getElementsByTagName("h2")[i].addEventListener("click", recorrerAdelante);
+        }
+
+        }
+      function recorrerAdelante(e) {
+        var texto = "";
+        var h2 = e.target;
+        texto += "Has elegido" + h2.textContent;
+
+        //seleccionamos al padre
+        var padre = h2.parentElement;
+        texto += "que esta situada en el " + padre.id + "<br>";
+
+        //seleccionamos al hermano
+        var ul = h2.nextElementSibling;
+
+        //Mostrat el numero de hijos
+        texto += "El numero de provincias es " + ul.children.lenght + ": ";
+
+        var hijo = ul.firstChild;
+        //si quisiera
+        while (hjo != null) {
+          texto += " " + hijo.textContent;
+          hijo = hijo.nextElementSibling;
+        }
+
+        //Mostramos texto
+        document.getElementById("texto").innerHTML = texto;
+      }
+    </script>
+  </head>
+  <body>
+        <div id="norte">
+            <h2>Galicia</h2>
+            <ul id="lista">
+                <li>A Coruña</li>
+                <li>Lugo</li>
+                <li>Ourense</li>
+                <li>Pontevedra</li>
+            </ul>
+        </div>
+        <div id="texto"></div>
+  </body>
+</html>
