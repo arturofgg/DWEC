@@ -1,0 +1,84 @@
+<!--Realiza una pagina codigo HTML que implemente el siguiente formulario, que recoja las aficiones del usuario, de
+forma que tras rellenar los campos y hacer clic en Aceptar aficiones , aparezca por pantalla el texto de la Figura 2.
+Implementarlo utilizando objetos del DOM. (1,25ptos)-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio1-ArturoFernandezGallardo</title>
+    <style>
+        .red {
+            color: red
+        }
+
+        .green {
+            color: green;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .a {
+            font-size: large;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", inicio);
+
+        function inicio() {
+            document.getElementById("crearAficiones").addEventListener("click", crearAficiones);
+        }
+
+        function crearAficiones() {
+            //Crear elemento
+            var parrafo1 = document.createElement("p");
+            var parrafo2 = document.createElement("p");
+            var parrafo3 = document.createElement("p");
+            var parrafo4 = document.createElement("p");
+            var parrafo5 = document.createElement("p");
+
+            //Crear texto
+            var texto1 = document.createTextNode(document.getElementById("campo1").value);
+            var texto2 = document.createTextNode(document.getElementById("campo2").value);
+            var texto3 = document.createTextNode("¿Mi deporte favorito?");
+            var texto4 = document.createTextNode("¿Mi pelicula favorita?");
+            var texto5 = document.createTextNode("MIS AFICIONES .....");
+
+            parrafo1.appendChild(texto1);
+            parrafo2.appendChild(texto2);
+            parrafo3.appendChild(texto3);
+            parrafo4.appendChild(texto4);
+            parrafo5.appendChild(texto5);
+
+            //añadir atributos
+            parrafo1.setAttribute("class", "blue")
+            parrafo2.setAttribute("class", "red")
+            parrafo3.setAttribute("class", "green")
+            parrafo4.setAttribute("class", "red")
+            parrafo5.setAttribute("class", "a")
+
+            var cont = document.getElementById("div1");
+            cont.appendChild(parrafo5);
+            cont.appendChild(parrafo3);
+            cont.appendChild(parrafo1);
+            cont.appendChild(parrafo4);
+            cont.appendChild(parrafo2);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <br /><br>
+    ¿Mi Deporte Favorito?<textarea id="campo1" rows="1" cols="23"></textarea><br>
+    ¿Mi pelicula Favorita?<textarea id="campo2" rows="1" cols="23"></textarea><br><br>
+    <button id="crearAficiones">Aceptar aficiones</button>
+
+</body>
+
+</html>

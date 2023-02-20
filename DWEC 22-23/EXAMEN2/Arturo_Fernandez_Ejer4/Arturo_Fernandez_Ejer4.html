@@ -1,0 +1,93 @@
+<!--4.- Realizar una pagina web (de diseño libre), llamada Logos, que disponga de tres botones: (1 pto.)
+Deportes, Bebida y Revista.
+Cuando se presiona algún boton, se procede a requerir al servidor un archivo de imagen, correspondiente con un
+logo (el logo lo podéis elegir libremente entre los existentes en las web) y que corresponderá con una marca de
+Deportes, una marca de Bebida, y una marca de logos de Revistas de Informatica Digital, respectivamente, de
+manera que se muestra la imagen del logo en la pagina en una etiqueta-->
+
+
+<!--NO HE SACADO EL EJERCICIO-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=ç, initial-scale=1.0">
+    <title>Ejercicio4-ArturoFernandezGallardo (LOGOS)</title>
+</head>
+<body>
+    <form action="" method="POST" id="formuReg">
+        <input type="submit" id="deportes" value="deportes" name="deportes">
+        <input type="submit" id="bebida" value="bebida" name="bebida">
+        <input type="submit" id="revista" value="revista" name="revista">
+    </form>
+</body>
+</html>
+
+    <script>
+        const form_registro = document.getElementById('formuReg');
+        const resultado = document.getElementById('resultado');
+
+        form_registro.addEventListener("deportes", e => {
+            e.preventDefault();
+
+            fetch("DWEC 22-23/EXAMEN2/Arturo_Fernandez_Ejer4/Arturo_Fernandez_Ejer4.php", {
+                method: "POST",
+                body: new FormData(form_registro)
+            }).then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                resultado.className = data.exito ? 'fracaso' : 'exito';
+                resultado.innerHTML = data.mensaje;
+            })
+            .catch(error => {
+                console.error(error);
+                resultado.innerHTML = "ERROR AL CONECTAR CON EL SERVER."
+            }) .then(data => console.log(data));
+        });
+
+        form_registro.addEventListener("bebida", e => {
+            e.preventDefault();
+
+            fetch("DWEC 22-23/EXAMEN2/Arturo_Fernandez_Ejer4/Arturo_Fernandez_Ejer4.php", {
+                method: "POST",
+                body: new FormData(form_registro)
+            }).then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                resultado.className = data.exito ? 'fracaso' : 'exito';
+                resultado.innerHTML = data.mensaje;
+            })
+            .catch(error => {
+                console.error(error);
+                resultado.innerHTML = "ERROR AL CONECTAR CON EL SERVER."
+            }) .then(data => console.log(data));
+        });
+
+        form_registro.addEventListener("revista", e => {
+            e.preventDefault();
+
+            fetch("DWEC 22-23/EXAMEN2/Arturo_Fernandez_Ejer4/Arturo_Fernandez_Ejer4.php", {
+                method: "POST",
+                body: new FormData(form_registro)
+            }).then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                resultado.className = data.exito ? 'fracaso' : 'exito';
+                resultado.innerHTML = data.mensaje;
+            })
+            .catch(error => {
+                console.error(error);
+                resultado.innerHTML = "ERROR AL CONECTAR CON EL SERVER."
+            }) .then(data => console.log(data));
+        });
+    </script>
+﻿
+</body>
+</html>

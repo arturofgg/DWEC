@@ -1,0 +1,52 @@
+<!--3.- Partiendo del ejercicio 1, introducir en el formulario la peticion de los campos: (0,75ptos)
+Nombre , Dni, y edad.
+Realizar las siguientes validaciones:
+. El nombre debe ser obligatorio, utilizando unicamente codigo javascript, para esta validación.
+. Dni debe cumplir el patron de 8 numeros y una letra haciendo uso de las expresiones regulares de javascript
+. Edad entre 18 y 99. Se valorará positivamente realizar esta validación, con la API de validación.-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio3-ArturoFernandezGallardo</title>
+</head>
+
+<body>
+    <form action="" method="get" id="form" class="">
+        <label>Nombre: </label><input type="text" name="nombre" id="nombre" class="nombre"><br><br>
+        <label>Dni: </label><input type=" text" name="dni" id="dni"><br><br>
+        <label>Edad: </label><input type="number" name="edad" id="edad" min="18" max="99" required><br><br>
+        <input type="submit" name="enviar" id="enviar" value="Enviar" onclick="validarDNI()">
+    </form>
+
+    <script>
+        
+        //LE INDICO QUE AL BOTON DE ENVIAR LE AÑADA UN EVENTO CLICK EN EL QUE SI EL VALOR DEL NOMBRE ES NULO, TE OBLIGUE A PONERLO.
+        document.querySelector('input[type="submit"]').addEventListener('click', function (e) {
+            if (document.querySelector('#nombre').value == '') {
+                alert('El nombre es obligatorio');
+                e.preventDefault(); // EVITA QUE EL FORMULARIO SE ENVIE SI ESTA VACIO
+            }
+        });
+
+
+        function validarDNI() {
+            //CREO LA VARIABLE DNI (POR EL ID) Y LA EXPRESION REGULAR
+            let dni = document.getElementById("dni").value;
+            let regex = /^[0-9]{8}[A-Za-z]$/;
+            //CONDICIONES PARA VALIDAR EL DNI
+            if (regex.test(dni)) {
+                alert("El DNI es válido");
+            } else {
+                alert("El DNI no es válido");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

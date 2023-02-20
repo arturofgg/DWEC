@@ -1,0 +1,36 @@
+<!--2.- Utilizando DOM, haz un programa que carge la información inicial de la Figura 3, mediante javascript, de
+forma que cuando se pulse un botón “InsertarAleatorio”, añada un elemento con un número aleatorio a una lista
+desordenada (elemento UL) – Figura 4. (1 pto.)-->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejercicio2-ArturoFernandezGallardo</title>
+</head>
+
+<body>
+    <ul id="lista">
+        <li>Primer elemento</li>
+        <li>Segundo elemento</li>
+    </ul>
+
+    <button onclick="insertarAleatorio()">InsertarAleatorio</button>
+
+    <script>
+        
+        function insertarAleatorio() {
+            //creo lista y numero aleatorio
+            var lista = document.getElementById("lista");
+            var numeroAleatorio = Math.floor(Math.random() * 100);
+            //creo el elemento e y hago un innerHTML 
+            var e = document.createElement("li");
+            e.innerHTML = "Nuevo elemento: " + numeroAleatorio;
+
+            lista.appendChild(e);
+        } 
+    </script>
+</body>
+
+</html
